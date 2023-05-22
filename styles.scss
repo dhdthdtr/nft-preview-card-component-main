@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+$very-dark-blue-main-bg: hsl(217, 54%, 11%);
+$very-dark-blue-card-bg: hsl(216, 50%, 16%);
+$very-dark-blue-line: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+$font-18: 18px;
+$outfit: 'Outfit', sans-serif;
+$m-15: 15px;
+$m-10: 10px;
+
+%hover{
+    color: $cyan;
+    cursor: pointer;
+    transition: .3s;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $outfit;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    background-color: $very-dark-blue-main-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nft-box{
+    width: min-content;
+    padding: 10px;
+    background-color: $very-dark-blue-card-bg;
+    border-radius: 10px;
+}
+
+#nft-img{
+    margin-bottom: $m-15;
+    position: relative;
+
+    #nft-main-img{
+        width: 240px;
+        height: 250px;
+        border-radius: 5px;
+    }
+
+    #nft-hover-img{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .3s;
+        background-color: $cyan;
+        border-radius: 5px;
+
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    #nft-hover-img:hover{
+        opacity: 0.7;
+        cursor: pointer;
+    }
+}
+
+#nft-name{
+    color: white;
+    margin-bottom: $m-15;
+}
+
+#nft-name:hover{
+    @extend %hover
+}
+
+#nft-description{
+    color: $soft-blue;
+    font-size: 14px;
+    margin-bottom: $m-15;
+    opacity: 0.4;
+}
+
+#nft-value{
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $m-15;
+
+    #nft-price{
+        font-weight: 600;
+        color: $cyan
+    }
+
+    #nft-remaining-date{
+        color: $white;
+    }
+}
+
+hr{
+    border: none;
+    height: 1px;
+    background-color: $very-dark-blue-line;
+    margin-bottom: $m-15;
+}
+
+#nft-author-info{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    
+    img{
+        width: 25px;
+        height: 25px;
+        border: 1px solid $white;
+        border-radius: 50%;
+    }
+
+    p{
+        margin-left: 10px;
+        color: $soft-blue;
+
+        span{
+            color: $white;
+        }
+
+        span:hover{
+            @extend %hover;
+        }
+    }
+}
